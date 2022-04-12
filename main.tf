@@ -7,7 +7,7 @@ resource "aws_ses_domain_identity_verification" "this" {
   depends_on = [cloudflare_record.domain_verification]
 }
 
-resource "aws_ses_domain_dkim" "gitlab" {
+resource "aws_ses_domain_dkim" "this" {
   domain = var.domain
 }
 
