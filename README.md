@@ -3,6 +3,18 @@
 This is a small module that wraps required Cloudflare and AWS resources for verifying a domain for SES.
 
 > DO NOT FORGET: When adding a new second level domain, you must ask AWS support to disable SES sandbox before being able to send mail to other domains.
+
+## Example usage
+
+```terraform
+module "verification" {
+  source = "vojtechmares/aws-ses-verification/cloudflare"
+  version = "0.1.0"
+
+  domain = "example.com"
+  zone_id = "<your Cloudflare zone ID>"
+}
+```
 ## Requirements
 
 | Name | Version |
