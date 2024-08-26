@@ -1,13 +1,13 @@
 terraform {
-  required_version = ">=1.1.0"
+  required_version = ">=1.9.5, <2.0.0"
   required_providers {
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = ">=3.12.1"
+      version = ">=4.40.0, <5.0.0"
     }
     aws = {
       source  = "hashicorp/aws"
-      version = ">=4.9.0"
+      version = ">=5.64.0, <6.0.0"
     }
   }
 }
