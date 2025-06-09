@@ -14,8 +14,8 @@ module "verification" {
   domain = "example.com"
   zone_id = "<your Cloudflare zone ID>"
 
-  # Optional: only set to true if you do NOT already have an SPF record
-  create_spf_record = false
+  # Optional: only set to true if you do NOT already have an SPF record. This option defaults to true if ommitted.
+  create_spf_record = true
 }
 ```
 
