@@ -10,6 +10,6 @@ variable "domain" {
 
 variable "create_spf_record" {
   type        = bool
-  default     = false
+  default     = true
   description = "Create an SPF record for the domain."
 }
