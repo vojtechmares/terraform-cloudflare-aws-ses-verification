@@ -13,31 +13,33 @@ module "verification" {
 
   domain = "example.com"
   zone_id = "<your Cloudflare zone ID>"
+
+  # Optional: only set to true if you do NOT already have an SPF record. This option defaults to true if ommitted.
+  create_spf_record = true
 }
 ```
 
 ## Requirements
 
-| Name | Version |
-| ---  | ---     |
+| Name                | Version            |
+| ------------------- | ------------------ |
 | Terraform           | `>=1.9.5, <2.0.0`  |
 | Cloudflare provider | `>=4.40.0, <5.0.0` |
 | AWS provider        | `>=5.64.0, <6.0.0` |
 
 ## Providers
 
-| Name | Version |
-| ---  | ---     |
+| Name                | Version            |
+| ------------------- | ------------------ |
 | Cloudflare provider | `>=4.40.0, <5.0.0` |
 | AWS provider        | `>=5.64.0, <6.0.0` |
 
-
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| `domain`  | FQDN for the domain you want to create the SES verification for. | `string` | n/a | yes |
-| `zone_id` | Cloudflare Zone ID                                               | `string` | n/a | yes |
+| Name      | Description                                                      | Type     | Default | Required |
+| --------- | ---------------------------------------------------------------- | -------- | ------- | :------: |
+| `domain`  | FQDN for the domain you want to create the SES verification for. | `string` | n/a     |   yes    |
+| `zone_id` | Cloudflare Zone ID                                               | `string` | n/a     |   yes    |
 
 ## Outputs
 

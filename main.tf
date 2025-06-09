@@ -31,6 +31,7 @@ resource "cloudflare_record" "dkim" {
 }
 
 resource "cloudflare_record" "spf" {
+  count   = var.create_spf_record ? 1 : 0
   zone_id = var.zone_id
   name    = var.domain
   type    = "TXT"
