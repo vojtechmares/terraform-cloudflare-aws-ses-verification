@@ -36,4 +36,5 @@ resource "cloudflare_record" "spf" {
   name    = var.domain
   type    = "TXT"
   content = "\"v=spf1 include:amazonses.com -all\""
+  comment = var.spf_comment
 }

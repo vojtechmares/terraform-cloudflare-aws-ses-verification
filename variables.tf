@@ -13,3 +13,9 @@ variable "create_spf_record" {
   default     = true
   description = "Create an SPF record for the domain."
 }
+
+variable "spf_comment" {
+  type        = string
+  description = "Optional comment to add to the SPF DNS record"
+  default     = null
+}

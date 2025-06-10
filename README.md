@@ -16,6 +16,9 @@ module "verification" {
 
   # Optional: only set to true if you do NOT already have an SPF record. This option defaults to true if ommitted.
   create_spf_record = true
+
+  # Optional: Add a comment to your SPF record
+  spf_comment  = "SPF record for sending emails via Amazon SES"
 }
 ```
 
