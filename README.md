@@ -21,25 +21,26 @@ module "verification" {
 
 ## Requirements
 
-| Name                | Version            |
-| ------------------- | ------------------ |
-| Terraform           | `>=1.9.5, <2.0.0`  |
-| Cloudflare provider | `>=4.40.0, <5.0.0` |
-| AWS provider        | `>=5.64.0, <6.0.0` |
+| Name                | Version           |
+| ------------------- | ----------------- |
+| Terraform           | `>=1.9.5, <2.0.0` |
+| Cloudflare provider | `>=4.40.0`        |
+| AWS provider        | `>=5.64.0`        |
 
 ## Providers
 
-| Name                | Version            |
-| ------------------- | ------------------ |
-| Cloudflare provider | `>=4.40.0, <5.0.0` |
-| AWS provider        | `>=5.64.0, <6.0.0` |
+| Name                | Version    |
+| ------------------- | ---------- |
+| Cloudflare provider | `>=4.40.0` |
+| AWS provider        | `>=5.64.0` |
 
 ## Inputs
 
-| Name      | Description                                                      | Type     | Default | Required |
-| --------- | ---------------------------------------------------------------- | -------- | ------- | :------: |
-| `domain`  | FQDN for the domain you want to create the SES verification for. | `string` | n/a     |   yes    |
-| `zone_id` | Cloudflare Zone ID                                               | `string` | n/a     |   yes    |
+| Name                | Description                                                      | Type     | Default | Required |
+| ------------------- | ---------------------------------------------------------------- | -------- | ------- | :------: |
+| `domain`            | FQDN for the domain you want to create the SES verification for. | `string` | n/a     |   yes    |
+| `zone_id`           | Cloudflare Zone ID                                               | `string` | n/a     |   yes    |
+| `create_spf_record` | Add an spf record                                                | `bool`   | true    |    no    |
 
 ## Outputs
 
