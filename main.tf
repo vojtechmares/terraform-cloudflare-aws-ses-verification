@@ -16,6 +16,7 @@ resource "cloudflare_dns_record" "domain_verification" {
   name    = "_amazonses.${aws_ses_domain_identity.this.id}"
   type    = "TXT"
   content = aws_ses_domain_identity.this.verification_token
+  ttl     = var.cloudflare_dns_record_ttl
 }
 
 resource "cloudflare_dns_record" "dkim" {
@@ -28,6 +29,7 @@ resource "cloudflare_dns_record" "dkim" {
   )
   type    = "CNAME"
   content = "${element(aws_ses_domain_dkim.this.dkim_tokens, count.index)}.dkim.amazonses.com"
+  ttl     = var.cloudflare_dns_record_ttl
 }
 
 resource "cloudflare_dns_record" "spf" {
@@ -36,4 +38,5 @@ resource "cloudflare_dns_record" "spf" {
   name    = var.domain
   type    = "TXT"
   content = "\"v=spf1 include:amazonses.com -all\""
+  ttl     = var.cloudflare_dns_record_ttl
 }

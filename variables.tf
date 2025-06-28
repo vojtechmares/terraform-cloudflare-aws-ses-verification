@@ -13,3 +13,9 @@ variable "create_spf_record" {
   default     = true
   description = "Create an SPF record for the domain."
 }
+
+variable "cloudflare_dns_record_ttl" {
+  type        = number
+  default     = 86400 # 24 hours
+  description = "TTL of all Cloudflare DNS records created by the module (SPF, DKIM, and domain verification)"
+}
