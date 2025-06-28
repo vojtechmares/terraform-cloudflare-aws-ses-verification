@@ -2,6 +2,21 @@
 
 Changelog is using format from [Keep a Changelog](https://keepachangelog.com/en/1.1.0/)
 
+## [v1.0.0] - 2025-06-28
+
+### BREAKING CHANGES
+
+- With migration to Cloudflare provider v5, resources had to be renamed from `cloudflare_record` to `cloudflare_dns_record` which is a breaking change for your Terraform state. To seamlessly upgrade, please follow [Cloudflare provider upgrade guide from v4.x to v5](https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/guides/version-5-upgrade).
+
+### Added
+
+- Added variable `cloudflare_dns_record_ttl` to configure all Cloudflare DNS records TTLs', default is `86400` seconds (or 24 hours)
+
+### Changed
+
+- Bumped `hashicorp/aws` Terraform provider to version range `>=6.0.0, <7.0.0`
+- Bumped `cloudflare/cloudflare` Terraform provider to version range `>=5.0.0, <6.0.0`
+
 ## [v0.3.1] - 2025-06-28
 
 ### Fixed
